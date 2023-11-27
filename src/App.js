@@ -1,8 +1,10 @@
 import logo from './logo.svg';
 import './App.css';
 import { useState , useEffect } from 'react';
+import { DataContext } from './contexts/DataContext';
 import Gallery from './Components/Gallery/Gallery';
 import SearchBar from './Components/SearchBar';
+
 
 function App() {
   const [search, setSearch] = useState('')
@@ -39,7 +41,9 @@ function App() {
     <div>
       <SearchBar handleSearch={handleSearch} />
       {message}
-      <Gallery data={data} />
+      <DataContext.Provider value={data}>
+        <Gallery />
+      </DataContext.Provider>
     </div>
   );
 }

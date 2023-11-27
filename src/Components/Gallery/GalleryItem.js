@@ -1,5 +1,6 @@
 import { useState } from 'react'
 
+
 function GalleryItem(props) {
     const [view, setView] = useState(false)
 
